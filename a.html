@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<input type="number" id="Weight" min="0" placeholder="Nhập cân nặng (KG)">
+<input type="number" id="Height" min='0' placeholder="Nhập chiều cao (M)">
+<button type="button" id="button" onclick="cal()">Tính</button>
+<h1 id="result"></h1>
+<script>
+    function cal() {
+        let kg = +document.getElementById('Weight').value
+        let m = +document.getElementById('Height').value
+        let BMI = kg / ( m*m )
+
+        if (BMI < 18.5){
+            document.getElementById('result').innerHTML = 'Underweight'
+        }else if (18.5 <= BMI && BMI < 25){
+            document.getElementById('result').innerHTML = 'Normal'
+        }else if(25 <= BMI && BMI < 30){
+            document.getElementById('result').innerHTML = 'Overweight'
+        }else {
+            document.getElementById('result').innerHTML = 'obese'
+        }
+    }
+
+</script>
+</body>
+</html>
